@@ -2,12 +2,15 @@
 
 ## postfix-gmail-relay
 
-    A docker image that use postfix, use Ubuntu 16.04 and add config
+    1. Forked from LyleScott/postfix-gmail-relay, add config and use ubuntu 16.04
+    2. Configure Postfix to use Gmail as a Mail Relay
 
-## Configurable
+## Configure
 
-    SYSTEM_TIMEZONE = UTC or America/New_York
-    MYNETWORKS = "10.0.0.0/8 192.168.0.0/16 172.0.0.0/8"
+    1. SYSTEM_TIMEZONE = UTC or America/New_York
+    2. MYNETWORKS = "10.0.0.0/8 192.168.0.0/16 172.0.0.0/8"
+    3. EMAIL = Email address
+    4. EMAILPASS = password
 
 ## Example
 
