@@ -53,11 +53,11 @@ sed -i -E 's/^(\s*)system\(\);/\1unix-stream("\/dev\/log");/' /etc/syslog-ng/sys
 # https://github.com/LyleScott/docker-postfix-gmail-relay/issues/1
 sed -i '/^smtp_tls_CAfile =/d' /etc/postfix/main.cf && \
 
-apt-get install -q -y \
-    supervisor
+#apt-get install -q -y \
+#    supervisor
 
-COPY supervisord.conf /etc/supervisor/
-COPY init.sh /opt/init.sh
+#COPY supervisord.conf /etc/supervisor/
+#COPY init.sh /opt/init.sh
 
 #>> Cleanup
 RUN rm -rf /var/lib/apt/lists/* /tmp/* && \
@@ -66,5 +66,5 @@ apt clean
 
 EXPOSE 25
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+#CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
